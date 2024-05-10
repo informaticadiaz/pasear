@@ -1,3 +1,5 @@
+
+
 import { Place } from '../data/types'
 import placeData from '../data/places.json'
 export default function PlaceList() {
@@ -51,7 +53,7 @@ export default function PlaceList() {
                   </div>
                   <div className="-ml-px flex w-0 flex-1 border-l-2 border-t-2">
                     <a
-                      href="tel:+1-202-555-0170"
+                        href={`/places/${place.id}`}
                       className="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent  py-4 text-sm font-semibold text-gray-900 dark:text-slate-400"
                     >
                       saber mas
