@@ -35,7 +35,7 @@ export default function PlaceList() {
                   </dd>
                   <dt className="sr-only">Role</dt>
                   <dd className="mt-3">
-                    <span className="rounded-full bg-green-100 px-3 text-xs font-medium text-green-800">
+                    <span className="rounded-full bg-slate-500 px-3 py-2 text-xs font-medium text-slate-200">
                       {place.location}
                     </span>
                   </dd>

@@ -1,7 +1,7 @@
 import Abc from './assets/Abc';
 import Start from './assets/Start';
 import { getPlace } from '../api/data';
-import { tabsList, buyDetails } from '../api/data';
+import { tabsList, buyDetails } from '../data/Data';
 import { useParams } from 'react-router-dom';
 import {
   Tab,
