@@ -1,6 +1,7 @@
 import Abc from './assets/Abc';
 import Start from './assets/Start';
 import { getPlace } from '../api/data';
+import { tabsList, buyDetails } from '../api/data';
 import { useParams } from 'react-router-dom';
 import {
   Tab,
@@ -14,87 +15,13 @@ import {
 } from '@headlessui/react';
 import { PlusIcon, MinusIcon } from '@heroicons/react/20/solid';
 
-const tabsList = [
-  {
-    name: 'Work',
-    imageSrc: './work.webp',
-  },
-  {
-    name: 'User',
-    imageSrc: './user.webp',
-  },
-  {
-    name: 'Code',
-    imageSrc: './code.webp',
-  },
-  {
-    name: 'Avatar',
-    imageSrc: './avatar.webp',
-  },
-];
-
-const buyDetails = [
-  {
-    tittle: 'Features',
-    items: (
-      <ul className="list-disc pl-6">
-        <li>Multiple strap configurations</li>
-        <li>Spacious interior with top zip</li>
-        <li>Leather handle and tabs</li>
-        <li>Interior dividers</li>
-        <li>Stainless strap loops</li>
-        <li>Double stitched construction</li>
-        <li>Water-resistant</li>
-      </ul>
-    ),
-  },
-  {
-    tittle: 'Care',
-    items: (
-      <ul className="list-disc pl-6">
-        <li>Spot clean as needed</li>
-        <li>Hand wash with mild soap</li>
-        <li>Machine wash interior dividers</li>
-        <li>Treat handle and tabs with leather conditioner</li>
-      </ul>
-    ),
-  },
-  {
-    tittle: 'Shipping',
-    items: (
-      <ul className="list-disc pl-6">
-        <li>Free shipping on orders over $300</li>
-        <li>International shipping available</li>
-        <li>Expedited shipping options</li>
-        <li>Signature required upon delivery</li>
-      </ul>
-    ),
-  },
-  {
-    tittle: 'Returns',
-    items: (
-      <ul className="list-disc pl-6">
-        <li>Easy return requests</li>
-        <li>Pre-paid shipping label included</li>
-        <li>10% restocking fee for returns</li>
-        <li>60 day return window</li>
-      </ul>
-    ),
-  },
-];
-
 export default function Place() {
   const { id } = useParams();
-
   const place = getPlace(id);
-
   if (!place) {
     return <div>Lugar no encontrado</div>;
   }
-
-  // const { name, description, tittle, image } = (getPlace(id))
   const { name, tittle, image, description } = place;
-  console.log(id);
 
   return (
     <div className="bg-white">
