@@ -14,5 +14,8 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    // Agregar regla para que se queje al usar comillas dobles
+    'quotes': ['error', 'single'],
   },
-}
+};
+

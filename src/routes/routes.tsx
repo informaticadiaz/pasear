@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 import App from '../App'
-import Place from '../components/Place'
+
+import ZipTote from '../components/Place';
 
 const router = createBrowserRouter([
   {
@@ -9,7 +10,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/places/:id",
-    element: <Place />,
+    element: <ZipTote />,
   }
 ]);
 
