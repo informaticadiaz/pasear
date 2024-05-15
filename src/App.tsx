@@ -3,7 +3,7 @@ import PlaceList from './components/PlaceList';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 p-8          dark:bg-slate-950">
+    <div className="min-h-screen bg-slate-300 p-8 dark:bg-dark">
       <PlaceList />
     </div>
   );

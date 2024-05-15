@@ -24,8 +24,8 @@ export default function Place() {
   const { name, tittle, image, description } = place;
 
   return (
-    <div className="bg-white">
-      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+    <div className="text-t-light dark:bg-dark dark:text-t-dark">
+      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 dark:bg-dark">
         <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
           <div className="flex flex-col-reverse">
             <TabGroup>
@@ -47,8 +47,7 @@ export default function Place() {
                   {tabsList.map((tab, index) => (
                     <Tab
                       key={index}
-                      className="relative flex h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase text-gray-900 data-[selected]:bg-blue-500"
-                    >
+                      className="relative flex h-24 cursor-pointer items-center justify-center rounded-md text-sm font-medium uppercase data-[selected]:bg-white">
                       <span className="sr-only">{name}</span>
                       <span className="absolute inset-0 overflow-hidden rounded-md">
                         <img
@@ -57,7 +56,7 @@ export default function Place() {
                           className="h-full w-full rounded-lg object-cover object-center p-1"
                         />
                       </span>
-                      <span className="pointer-events-none absolute inset-0 rounded-md text-indigo-500 ring-1 ring-transparent ring-offset-2"></span>
+                      <span className="pointer-events-none absolute inset-0 rounded-md ring-1 ring-transparent ring-offset-2"></span>
                     </Tab>
                   ))}
                 </TabList>
@@ -84,46 +83,44 @@ export default function Place() {
             </div>
             <div className="mt-6">
               <h3 className="sr-only">Description</h3>
-              <div className="text-base text-gray-700">
+              <div className="text-base">
                 <p>{description}</p>
               </div>
             </div>
             <form className="mt-6">
               <div>
-                <h3 className="text-sm text-gray-600">Color</h3>
+                <h3 className="text-sm">Color</h3>
                 {/* HedlessUI */}
               </div>
               <div className="mt-10 flex">
                 <button
                   type="submit"
-                  className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white sm:w-full"
-                >
+                  className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent px-8 py-3 text-base font-medium sm:w-full dark:bg-btn-dark">
                   Add to bag
                 </button>
                 <button
                   type="submit"
-                  className="ml-4 flex items-center justify-center rounded-md px-3 py-3 text-gray-400"
-                >
+                  className="ml-4 flex items-center justify-center rounded-md px-3 py-3">
                   <Abc />
                   <span className="sr-only">Add to favorite</span>
                 </button>
               </div>
             </form>
 
-            <div className="mx-auto mt-6 w-full divide-y border-t text-gray-700">
+            <div className="mx-auto mt-6 w-full divide-y border-t">
               {buyDetails.map((item, index) => (
                 <Disclosure as="div" key={index} className="p-6">
                   {({ open }) => (
                     <>
                       <DisclosureButton className="group flex w-full items-center justify-between">
-                        <span className="${open ?  '' : 'rotate-180 transform'} font-medium text-gray-700 group-data-[hover]:fill-white/50 group-data-[open]:text-indigo-500">
+                        <span className="${open ?  '' : 'rotate-180 transform'} font-medium  group-data-[hover]:fill-white/50 group-data-[open]:text-indigo-500">
                           {tittle}
                         </span>
-                        <div className="size-5 text-gray-700 group-data-[open]:text-indigo-500">
+                        <div className="size-5  group-data-[open]:text-indigo-500">
                           {open ? <MinusIcon /> : <PlusIcon />}
                         </div>
                       </DisclosureButton>
-                      <DisclosurePanel className="mt-2 text-sm/5 text-gray-700">
+                      <DisclosurePanel className="mt-2 text-sm/5 ">
                         {item.items}
                       </DisclosurePanel>
                     </>
